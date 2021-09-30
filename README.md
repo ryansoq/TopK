@@ -1,5 +1,25 @@
 # Use decode_predictions to get Top1~TopK from model inference
 
+## License
+
+[!["THE SUSHI-WARE LICENSE"](https://img.shields.io/badge/license-SUSHI--WARE%F0%9F%8D%A3-blue.svg)](https://github.com/MakeNowJust/sushi-ware)
+
+Below Markdown text says all about this license:
+
+```markdown
+## "THE SUSHI-WARE LICENSE"
+
+<ryansoq@gmail.com> wrote this file.
+
+As long as you retain this notice you can do whatever you want
+with this stuff. If we meet some day, and you think this stuff
+is worth it, you can buy me a **sushi 🍣** in return.
+
+(This license is based on ["THE BEER-WARE LICENSE" (Revision 42)].
+ Thanks a lot, Poul-Henning Kamp ;)
+
+["THE BEER-WARE LICENSE" (Revision 42)]: https://people.freebsd.org/~phk/
+```
 ## How to use
 
 "imagenet1000_clsidx_to_labels.txt" content
