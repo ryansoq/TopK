@@ -6,11 +6,13 @@
 #include <algorithm>
 #include <cassert>
 
+int top = 0;
+
 class Tool
 {
     public:
         template<typename T, int SIZE>
-        std::vector< std::tuple<int, std::string, T> > decode_predictions(T * data, const char* path)
+        std::vector< std::tuple<int, std::string, T> > decode_predictions(T * data, int top, const char* path)
         {
             // Get labels
             std::vector<std::string> label;
@@ -40,6 +42,23 @@ class Tool
             // Sort
             std::sort(ILV.begin(), ILV.end(), [](std::tuple<int, std::string, T> a, std::tuple<int, std::string, T> b) { return std::get<2>(a) > std::get<2>(b); });
 
+            // Print
+            int index_;
+            std::string label_;
+            T value_;
+
+            std::cout << "Predicted: [" << std::endl;
+            for (auto i = 0; i < top; i++)
+            {
+                std::tie(index_, label_, value_) = ILV[i];
+
+                if (i!=0)
+                    std::cout << ", " << std::endl;
+
+                std::cout << "(" << index_ << ", " << label_ << ", " << (float)value_;
+                std::cout << ")";
+            }
+            std::cout << "]" << std::endl;
             return ILV;
         }
 };
