@@ -46,6 +46,8 @@ int main(int argc, char *argv[])
     Tool tool;
     int8_t predictions[DATA_SIZE] = {63, 77, -88, 30, 56, }; // e.g. by some inference
     auto depredictions = tool.decode_predictions<int8_t, DATA_SIZE>(predictions, top = 5, "imagenet1000_clsidx_to_labels.txt");
+    auto [index, label, value] = depredictions[0];
+    std::cout << "The image prediction Top 1 index is: " << index << ", label name: " << label << ", confidence: " << (float)value << std::endl;
 
     return 0;
 }
@@ -61,4 +63,5 @@ Predicted: [
 (4,  4: 'hammerhead, hammerhead shark',, 56),
 (3,  3: 'tiger shark, Galeocerdo cuvieri',, 30),
 (2,  2: 'great white shark, white shark, man-eater, man-eating shark, Carcharodon carcharias',, -88)]
+The image prediction Top 1 index is: 1, label name:  1: 'goldfish, Carassius auratus',, confidence: 77
 ```
