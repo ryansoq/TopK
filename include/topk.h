@@ -6,28 +6,37 @@
 #include <algorithm>
 #include <cassert>
 
-int top = 0;
+#define LABEL_PATH "imagenet1000_clsidx_to_labels.txt"
 
 class Tool
 {
     public:
         template<typename T, int SIZE>
-        std::vector< std::tuple<int, std::string, T> > decode_predictions(T * data, int top, const char* path)
+        std::vector< std::tuple<int, std::string, T> > decode_predictions(T * data, int top, const char* path = "")
         {
             // Get labels
+            std::string str(path);
             std::vector<std::string> label;
             std::string line;
-            std::ifstream load_label(path);
+            std::ifstream load_label;
+
+            if (str == "")
+                load_label.open(LABEL_PATH);
+            else
+                load_label.open(path);
 
             if (!load_label.good())
             {
                 std::cout << "Not found label ..." << std::endl;
                 assert(0);
             }
+
             while (std::getline(load_label, line))
             {
                 label.push_back(line);
             }
+
+            load_label.close();
 
             // Get values
             std::vector<T> value(data, data + SIZE);
