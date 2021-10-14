@@ -66,3 +66,11 @@ Predicted: [
 (2,  2: 'great white shark, white shark, man-eater, man-eating shark, Carcharodon carcharias',, -88)]
 The image prediction Top 1 index is: 1, label name:  1: 'goldfish, Carassius auratus',, confidence: 77
 ```
+
+Note:
+
+1. If you want to use BERT-Large, download their model into **coqa/bert-large-uncased**; if you want to use BERT-base, download their model into **coqa/bert-base-cased**;
+    * The models can be downloaded from Huggingface:
+      * 'bert-base-uncased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz",
+      * 'bert-large-uncased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-large-uncased.tar.gz"
+    * bert-large-uncased-vocab.txt can be downloaded from Google's BERT repository
