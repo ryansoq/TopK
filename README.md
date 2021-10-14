@@ -74,3 +74,4 @@ Note:
       * 'bert-base-uncased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz",
       * 'bert-large-uncased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-large-uncased.tar.gz"
     * bert-large-uncased-vocab.txt can be downloaded from Google's BERT repository
+    * Document content reference: https://github.com/microsoft/SDNet/README.md
